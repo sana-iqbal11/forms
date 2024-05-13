@@ -1,47 +1,34 @@
-import React from "react";
+import React, { Component } from 'react'
 
-function ContactForm() {
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  
-  //   const myForm = event.target;
-  //   const formData = new FormData(myForm);
-  
-  //   fetch("/", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //     body: new URLSearchParams(formData).toString(),
-  //   })
-  //     .then(() => navigate("/thank-you/"))
-  //     .catch((error) => alert(error));
-  // };
-  
-  return (
-    <div>
-    <div>
-    <form name="contact" method="post" netlify-honeypot="bot-field">
-      <p>
-        <label htmlFor="name">Name</label> <br />
-        <input type="text" id="name" name="name" required />
-      </p>
-      <p>
-        <label htmlFor="email">Email</label> <br />
-        <input type="email" id="email" name="email" required />
-      </p>
-      <p>
-        <label htmlFor="message">Message</label> <br />
-        <textarea id="message" name="message" required></textarea>
-      </p>
-      <p>
-        <input type="submit" value="Submit message" />
-      </p>
-    </form>
+import { NetlifyForm, Honeypot } from 'react-netlify-forms'
 
-    </div>
-  </div>
-  );
-}
-
-export default ContactForm;
-
-
+export default ContactForm = () => (
+  <NetlifyForm name='Contact' action='/thanks' honeypotName='bot-field'>
+    {({ handleChange, success, error }) => (
+      <>
+        <Honeypot />
+        {success && <p>Thanks for contacting us!</p>}
+        {error && (
+          <p>Sorry, we could not reach our servers. Please try again later.</p>
+        )}
+        <div>
+          <label htmlFor='name'>Name:</label>
+          <input type='text' name='name' id='name' onChange={handleChange} />
+        </div>
+        <div>
+          <label htmlFor='message'>Message:</label>
+          <textarea
+            type='text'
+            name='message'
+            id='message'
+            rows='4'
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <button type='submit'>Submit</button>
+        </div>
+      </>
+    )}
+  </NetlifyForm>
+)
