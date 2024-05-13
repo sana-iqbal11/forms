@@ -6,7 +6,7 @@ const ContactForm = () => {
     return(
 
         <form name="contact" action="/success" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="contact" hidden />
       <p>
 <input type="text" name="firstname" id="firstname" />
         <label htmlFor="yourname">
