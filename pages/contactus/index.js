@@ -14,6 +14,8 @@ const ContactForm = () => {
           <p>Sorry, we could not reach our servers. Please try again later.</p>
         )}
         <div>
+        <input type="hidden" name="form-name" value="Contact"/>
+
           <label htmlFor='name'>Name:</label>
           <input type='text' name='name' id='name' onChange={handleChange} />
         </div>
