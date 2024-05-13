@@ -48,12 +48,12 @@ const VoucherOrderForm = () => {
         <input type="phone" id="voucher_tel" name="telefon" onChange={(e) => setPersonPhone(e.target.value)} />
       </div>
 
-      <div className={styles.formSubmitRow}>
+      <div >
         <input type="checkbox" name="souhlas" id="souhlas" onClick={handleClick} />
         <label htmlFor="souhlas">Souhlasím se zpracováním všech údajů</label>
       </div>
 
-      <div className={styles.formSubmitRow}>
+      <div >
         <button type="submit" role="button" disabled={!isValid()}>
           Objednat
         </button>
