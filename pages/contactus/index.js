@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 
 import { NetlifyForm, Honeypot } from 'react-netlify-forms'
 
-export default ContactForm = () => (
-  <NetlifyForm name='Contact' action='/thanks' honeypotName='bot-field'>
+const ContactForm = () => {
+    return(
+
+    <NetlifyForm name='Contact' action='/thanks' honeypotName='bot-field'>
     {({ handleChange, success, error }) => (
       <>
         <Honeypot />
@@ -31,4 +33,7 @@ export default ContactForm = () => (
       </>
     )}
   </NetlifyForm>
-)
+    )
+}
+
+export default ContactForm
