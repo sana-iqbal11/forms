@@ -1,53 +1,21 @@
-// import React from "react";
-
-// function ContactForm() {
-//   // const handleSubmit = (event) => {
-//   //   event.preventDefault();
-  
-//   //   const myForm = event.target;
-//   //   const formData = new FormData(myForm);
-  
-//   //   fetch("/", {
-//   //     method: "POST",
-//   //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-//   //     body: new URLSearchParams(formData).toString(),
-//   //   })
-//   //     .then(() => navigate("/thank-you/"))
-//   //     .catch((error) => alert(error));
-//   // };
-  
-//   return (
-//     <form name="contact" method="POST" data-netlify="true">
-//         <input type="hidden" name="form-name" value="contact" />
-
-//     <p>
-//       {/* <label htmlFor="name">Name</label> */}
-//       <input type="text" id="name" name="name" />
-//     </p>
-//     <p>
-//       {/* <label htmlFor="email">Email</label> */}
-//       <input type="text" id="email" name="email" />
-//     </p>
-//     <p>
-//       {/* <label htmlFor="message">Message</label> */}
-//       <textarea id="message" name="message"></textarea>
-//     </p>
-//     <p>
-//       <button type="submit">Send</button>
-//     </p>
-//   </form>
-
-//   );
-// }
-
-// export default ContactForm;
-
 import React from "react";
+import SectionTitle from "./sectionTitle";
+import ColoredSpan from "./coloredSpan";
+import HeadingDescription from "./headingDescription";
 
 function ContactForm() {
   return (
     <div className="grid grid-cols-1 gap-5 place-content-center h-full lg:px-16 px-3">
-    
+      <SectionTitle className="lg:text-start text-center">
+        <ColoredSpan className="text-white laptop:text-5xl text-3xl">
+          Let’s level up your brand, together
+        </ColoredSpan>
+      </SectionTitle>
+      <HeadingDescription className="text-[16px] lg:text-start text-center mt-[-28px]">
+        You can reach us anytime via{" "}
+        <span className="text-orange">info@e3.ventures</span>
+      </HeadingDescription>
+      
             <form className="flex flex-col gap-4" name="contact" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
 
@@ -70,13 +38,13 @@ function ContactForm() {
         </label>
         <label
           htmlFor="message"
-          className="laptop:hidden mb-2 text-sm font-medium text-gray-900 dark:text-white  block"
+          className="laptop:hidden mb-2 text-sm font-medium text-gray-900 dark:text-white  block message"
         >
           Message
         </label>
         <textarea
           id="message"
-          name="message"
+          name="messages"
           rows={4}
           className="laptop:block hidden p-2.5 text-black focus:border-0 mt-[-16px] w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 "
           placeholder="Tell us a little about the project..."
@@ -170,4 +138,3 @@ const PhoneField = ({
     </div>
   );
 };
-
